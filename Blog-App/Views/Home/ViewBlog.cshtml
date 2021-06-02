@@ -1,0 +1,24 @@
+﻿@model Blog_App.Models.Blog;
+@if (Model != null)
+{
+    <div class="row p-2 border m-0 mb-3">
+        <img class="col-lg-2 col-sm-3 col-4 rounded-circle img-fixed transbl" src=@Model.UserImage />
+        <div class="col-lg-10 col-sm-9 col-8 pl-0">
+            <p class="d-inline mr-2 text-primary">@Model.Username</p>
+            <p class="d-inline">@Model.Date</p>
+            <!-- Checking is blog from same user -->
+            @if (Model.isSame)
+            {
+                <div class="pt-2 pb-2">
+                    <a asp-action="UpdateBlog" asp-route-id="@Model.Id"><button class="btn btn-secondary">Update</button></a>
+                    <a asp-action="DeleteBlog" asp-route-id="@Model.Id"><button class="btn btn-danger">Delete</button></a>
+                </div>
+            }
+            <div class="line"></div>
+            <div class="transbl">
+                <p class="display-4">@Model.Title</p>
+                <p class="text-justify">@Model.Content</p>
+            </div>
+        </div>
+    </div>
+}

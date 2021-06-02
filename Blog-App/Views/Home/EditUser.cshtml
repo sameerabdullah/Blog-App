@@ -1,0 +1,51 @@
+﻿@using Blog_App.Models
+@model EUser
+<form method="post" action="/Home/EditUser" enctype="multipart/form-data" class="container form-style pt-3">
+    <div class="mb-3 d-flex">
+        <img class="rounded-circle prof-img" src=@Model.UserImage />
+        <p class="display-4 mt-2 ml-4">@Model.Username</p>
+    </div>
+    <p class="display-4">Edit User</p>
+    <div class="line"></div>
+    <p class="text-danger">
+        <!-- Checking is Model contain any object -->
+        @if (Model != null)
+        {@Model.Error}
+    </p>
+    <div class="form-group">
+        <label asp-for="Username">Username*</label>
+        <input class="form-control" asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email*</label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <p class="mb-1">Image</p>
+        <p class="d-inline mr-2">Currently:</p>
+        <p class="d-inline text-primary">@Model.Image</p>
+        <p class="mb-1">Change:</p>
+        <input asp-for="Photo" />
+        <span asp-validation-for="Photo"></span>
+        <span class="text-danger">
+            <!-- Checking is Model contain any object -->
+            @if (Model != null)
+            {@Model.ExtErr}
+        </span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Password</label>
+        <input class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+        <span class="text-danger">
+            <!-- Checking is Model contain any object -->
+            @if (Model != null)
+            {@Model.PassErr}
+        </span>
+    </div>
+    <input asp-for="Id" type="hidden">
+    <input asp-for="UserImage" type="hidden">
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

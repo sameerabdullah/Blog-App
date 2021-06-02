@@ -1,0 +1,25 @@
+﻿@model List<Blog_App.Models.User>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col"><a class="card-link" asp-action="Signup">Add User</a></th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Iterating Blogs -->
+        @foreach (Blog_App.Models.User user in Model)
+        {
+            <tr>
+                <th><img class="rounded-circle ad-img" src=@user.Photo /></th>
+                <td>@user.Username</td>
+                <td>@user.Email</td>
+                <td><a class="card-link" asp-action="EditUser" asp-route-id="@user.Id">Edit</a></td>
+                <td><a class="card-link" asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

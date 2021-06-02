@@ -1,0 +1,23 @@
+﻿@using Blog_App.Models
+@model Login
+<form method="post" action="/Home/AdminDashboard" class="container form-style">
+    <p class="display-4">Admin Login</p>
+    <div class="line"></div>
+    <p class="text-danger">
+        @if (Model != null)
+        {@Model.Error}
+    </p>
+    <div class="form-group">
+        <label asp-for="Username">Username*</label>
+        <input class="form-control" asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Password*</label>
+        <input class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-success">Login</button>
+    </div>
+</form>

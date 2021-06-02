@@ -1,0 +1,40 @@
+﻿@using Blog_App.Models
+@model Signup
+<form method="post" action="/Home/Login" enctype="multipart/form-data" class="container form-style">
+    <p class="display-4">Signup</p>
+    <div class="line"></div>
+    <p class="text-danger">
+        <!-- Checking is Model contain any object -->
+        @if (Model != null)
+        {@Model.Error}
+    </p>
+    <div class="form-group">
+        <label asp-for="Username">Username*</label>
+        <input class="form-control" asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email*</label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Password*</label>
+        <input class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="form-group">
+        <p class="mb-1">Image*</p>
+        <input asp-for="Photo" />
+        <span asp-validation-for="Photo"></span>
+        <span class="text-danger">
+            <!-- Checking is Model contain any object -->
+            @if (Model != null)
+            {@Model.ExtErr}
+        </span>
+    </div>
+    <div class="d-flex justify-content-between align-items-end">
+        <a class="card-link" asp-action="Home">I already have an account</a>
+        <button type="submit" class="btn btn-success">Signup</button>
+    </div>
+</form>

@@ -1,0 +1,58 @@
+﻿.navbar-dark {
+    background-color: #002366;
+    background: -webkit-linear-gradient(to right, #000000, #002366);
+    background: linear-gradient(to right, #000000, #002366);
+}
+.sticky-nav {
+    position: sticky;
+    top: 0;
+}
+.form-style {
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.display-4{
+    font-size: xx-large;
+    font-weight: bold;
+}
+.line {
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: #ced4da
+}
+.input-validation-error{
+    border-color: red;
+}
+.field-validation-error{
+    color: red;
+}
+.img-height {
+    height: 250px;
+}
+.img-fixed {
+    height: 120px;
+}
+.prof-img {
+    width: 120px;
+    height: 120px;
+}
+.ad-img {
+    width: 50px;
+    height: 50px;
+}
+.trans {
+    transition: transform 0.1s;
+}
+.trans:hover{
+    transform: scale(1.03);
+    box-shadow: 2px 4px 2px rgba(170, 170, 170, 0.2);
+}
+.transbl {
+    transition: transform 0.1s;
+}
+.transbl:hover{
+    transform: scale(1.02);
+}
